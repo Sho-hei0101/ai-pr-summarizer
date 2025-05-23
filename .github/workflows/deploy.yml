@@ -17,10 +17,15 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install        # ← ここを npm ci → npm install に変更
+        working-directory: ./ai-pr-summarizer
+        run: npm install
+
+      - name: Build project
+        working-directory: ./ai-pr-summarizer
+        run: npm run build
 
       - name: Publish to Cloudflare
-        env:
-          CF_API_KEY: ${{ secrets.CF_API_KEY }}
-          CF_EMAIL:  ${{ secrets.CF_EMAIL }}
-        run: npx wrangler publish --env production --account-id ${{ secrets.CF_ACCOUNT_ID }}
+        uses: cloudflare/wrangler-action@v2
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          working-directory: ./ai-pr-summarizer
