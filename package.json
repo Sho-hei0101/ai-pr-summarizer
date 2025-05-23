@@ -1,0 +1,26 @@
+{
+  "name": "ai-pr-summarizer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sho-hei0101/ai-pr-summarizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sho-hei0101/ai-pr-summarizer/issues"
+  },
+  "homepage": "https://github.com/Sho-hei0101/ai-pr-summarizer#readme",
+  "description": "",
+  "devDependencies": {
+    "wrangler": "^4.16.1"
+  }
+}

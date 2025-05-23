@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../src/index.js"],
+  "sourceRoot": "dist",
+  "sourcesContent": ["export default {\n  async fetch(request) {\n    return new Response(\"Hello World!\", {\n      headers: { \"Content-Type\": \"text/plain; charset=utf-8\" },\n    });\n  },\n};\n"],
+  "mappings": ";AAAA,IAAO,gBAAQ;AAAA,EACb,MAAM,MAAM,SAAS;AACnB,WAAO,IAAI,SAAS,gBAAgB;AAAA,MAClC,SAAS,EAAE,gBAAgB,4BAA4B;AAAA,IACzD,CAAC;AAAA,EACH;AACF;",
+  "names": []
+}
