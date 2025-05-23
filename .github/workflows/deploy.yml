@@ -8,11 +8,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Publish to Cloudflare
-        uses: cloudflare/wrangler-action@v2
+        uses: cloudflare/wrangler-action@v1
         with:
           apiKey: ${{ secrets.CF_API_KEY }}
-          email:   ${{ secrets.CF_EMAIL }}
+          email:  ${{ secrets.CF_EMAIL }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          environment: production
