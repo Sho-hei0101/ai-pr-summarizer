@@ -1,0 +1,22 @@
+name: Deploy to Cloudflare Workers
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Publish to Cloudflare
+        uses: cloudflare/wrangler-action@2
+        with:
+          # 事前にリポジトリの Settings → Secrets → Actions で
+          # CLOUDFLARE_API_TOKEN を登録しておいてください
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # wrangler.toml の [vars.environment] を production に切り替える場合など
+          environment: production
